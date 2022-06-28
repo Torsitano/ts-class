@@ -1,12 +1,14 @@
-import { Sortable } from './interfaces';
+
+import { Sorter } from './Sorter';
 
 
 
-export class CharactersCollection implements Sortable {
+export class CharactersCollection extends Sorter {
     data: string
     length: number
 
     constructor( data: string ) {
+        super()
         this.data = data
         this.length = this.data.length
     }
