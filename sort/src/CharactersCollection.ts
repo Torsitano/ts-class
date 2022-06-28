@@ -13,6 +13,8 @@ export class CharactersCollection implements Sortable {
 
     compare(leftIndex: number, rightIndex: number): boolean {
         
+
+        return false
     }
 
     swap(leftIndex: number, rightIndex: number): void {
