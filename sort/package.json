@@ -1,0 +1,17 @@
+{
+    "name": "ts-class",
+    "version": "0.1.0",
+    "scripts": {
+        "start:build": "tsc -w",
+        "start:run": "nodemon dist/index.js",
+        "start": "concurrently npm:start:*"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.42",
+        "@types/prettier": "2.6.0",
+        "concurrently": "^7.2.2",
+        "nodemon": "^2.0.18",
+        "ts-node": "^10.8.1",
+        "typescript": "^4.7.4"
+    }
+}
