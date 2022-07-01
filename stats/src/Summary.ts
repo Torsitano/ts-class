@@ -18,5 +18,10 @@ export class Summary {
         this.outputTarget = outputTarget
     }
 
+    buildAndPrintReport( matches: MatchData[] ): void {
+        const output = this.analyzer.run( matches )
+        this.outputTarget.print( output )
+    }
+
 
 }
