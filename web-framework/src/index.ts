@@ -1,10 +1,15 @@
 import { User } from './models/User'
+import { UserForm } from './views/UserForm'
 
-const collection = User.buildUserCollection()
 
+const rootElement = document.getElementById( 'root' )
 
-collection.on( 'change', () => {
-    console.log( collection )
-} )
+if ( !rootElement ) {
+    throw new Error( 'Root element missing' )
+}
 
-collection.fetch()
+const user = User.buildUser( { name: 'Bob', age: 20 } )
+
+const userForm = new UserForm( rootElement, user )
+
+userForm.render()
