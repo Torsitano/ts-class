@@ -1,9 +1,7 @@
-import { View } from './View'
 import { User, UserProps } from '../models/User'
+import { View } from './View'
 
 export class UserForm extends View<User, UserProps> {
-
-
     eventsMap(): { [ key: string ]: () => void } {
         return {
             'click:.set-age': this.onSetAgeClick,
@@ -13,20 +11,17 @@ export class UserForm extends View<User, UserProps> {
     }
 
     onSaveClick = (): void => {
-        console.log( 'save' )
         this.model.save()
     }
 
     onSetNameClick = (): void => {
         const input = this.parent.querySelector( 'input' )
 
-        if ( !input ) {
-            throw new Error( 'Input missing' )
+        if ( input ) {
+            const name = input.value
+
+            this.model.set( { name } )
         }
-
-        const name = input.value
-
-        this.model.set( { name: name } )
     }
 
     onSetAgeClick = (): void => {
@@ -43,5 +38,4 @@ export class UserForm extends View<User, UserProps> {
         </div>
         `
     }
-
 }
